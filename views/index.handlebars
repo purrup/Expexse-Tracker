@@ -1,1 +1,65 @@
-<h1>spending</h1>
+<div class="col-md-12 mx-auto flex-md-column align-items-md-center">
+  <div class="row my-5">
+
+    <div class="btn-group mr-3">
+      <button class="btn btn-primary dropdown-toggle btn-lg" type="button" id="dropdownMenuButton"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        月份
+      </button>
+
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="#">1月</a>
+        <a class="dropdown-item" href="#">2</a>
+        <a class="dropdown-item" href="#">3</a>
+      </div>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-primary dropdown-toggle btn-lg" type="button" id="dropdownMenuButton"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        類別
+      </button>
+
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="#">家居物業</a>
+        <a class="dropdown-item" href="#">交通出行</a>
+        <a class="dropdown-item" href="#">休閒娛樂</a>
+        <a class="dropdown-item" href="#">餐飲食品</a>
+        <a class="dropdown-item" href="#">其他</a>
+      </div>
+    </div>
+  </div>
+  <div class="row total-amount mb-5">
+    <div class="col-12">
+      <div class="row">
+        <p>總金額：</p><span>66666</span>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-5">
+
+    <ul class="list-group ">
+      {{!-- each --}}
+      <li
+        class="list-group-item-active list-group-item-action list-group-item-light d-md-flex flex-row justify-content-between align-items-center">
+
+        <div class="expense-name col-md-auto mr-auto">
+          <p>午餐</p><span>2019/04/23</span>
+        </div>
+        <div class="amount col-auto mr-auto">
+          <span>60</span>
+        </div>
+        <div class="col-auto">
+          <a href="#" class="btn btn-success">修改</a>
+          <form action="#" method="post" style="display:inline">
+            <button type="submit" class="btn btn-danger">刪除</button>
+          </form>
+        </div>
+
+      </li>
+      {{!-- each --}}
+    </ul>
+  </div>
+  <div class="row create mt-3">
+    <a href="#" class="btn btn-primary mb-3">新增支出</a>
+  </div>
+</div>

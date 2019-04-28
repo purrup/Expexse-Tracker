@@ -1,0 +1,47 @@
+/* .btn-group .btn {
+
+} */
+
+/* 總金額 */
+.total-amount p {
+  font-size: 2.3em;
+  margin-right: 30px;
+}
+
+/* 金額數字 */
+.total-amount span {
+  font-size: 5em;
+}
+
+ul {
+  list-style: none;
+  width: 100%;
+}
+
+ul li {
+  border-radius: 8px 8px 8px 8px;
+  -moz-border-radius: 8px 8px 8px 8px;
+  -webkit-border-radius: 8px 8px 8px 8px;
+  border: 0px solid #000000;
+}
+
+ul li .amount {
+  font-size: 2em;
+}
+
+ul li .btn {
+  font-size: 1em;
+}
+
+.list-group {
+  font-size: 1.2em;
+}
+
+.list-group .expense-name p {
+  margin: 0;
+  font-size: 1.8em;
+}
+
+.create a {
+  font-size: 1.2em;
+}
