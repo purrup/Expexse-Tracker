@@ -2,9 +2,9 @@ const express = require('express')
 const router = express.Router()
 
 // 列出全部 Record
-// router.get('/', (req, res) => {
-//   res.send('display all record')
-// })
+router.get('/', (req, res) => {
+  res.send('display all record')
+})
 
 //新增一筆 Record 的頁面
 router.get('/new', (req, res) => {
@@ -12,6 +12,7 @@ router.get('/new', (req, res) => {
 })
 
 // 新增一筆 Record
+router.put('/new', (req, res) => {})
 
 // 修改 Record 頁面
 router.get('/edit', (req, res) => {
@@ -19,5 +20,6 @@ router.get('/edit', (req, res) => {
 })
 
 // 修改 Record
+router.post('/edit', (req, res) => {})
 
 module.exports = router
