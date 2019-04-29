@@ -20,8 +20,10 @@ router.post('/new', (req, res) => {
 })
 
 // 修改 Record 頁面
-router.get('/edit', (req, res) => {
-  res.render('edit')
+router.get('/:id/edit', (req, res) => {
+  Record.findOne({ _id: req.params.id }, (err, record) => {
+    return res.render('edit', { record })
+  })
 })
 
 // 修改 Record

@@ -11,47 +11,50 @@
 
 
     <div class="form-group row mb-5">
-      <label for="expense-name" class="col-sm-4 col-form-label col-form-label-lg py-0">名稱*</label>
+      <label for="name" class="col-sm-4 col-form-label col-form-label-lg py-0">名稱*</label>
       <div class="col-sm-4">
-        <input type="text" name="expense-name" class="form-control form-control-lg" id="expense_name" placeholder=""
-          required>
+        <input type="text" name="name" class="form-control form-control-lg" id="name" placeholder=""
+          value="{{{record.name}}}" required>
       </div>
       <div class="valid-feedback">
         Looks good!
       </div>
       <div class="invalid-feedback">
-        Please choose a username.
+        Please enter something.
       </div>
     </div>
 
     <div class="form-group row mb-5">
       <label for="date" class="col-sm-4 col-form-label col-form-label-lg py-0">日期*</label>
       <div class="col-sm-4">
-        <input type="date" name="date" class="form-control form-control-lg" id="date" placeholder="" required>
+        <input type="date" name="date" class="form-control form-control-lg" id="date" placeholder=""
+          value="{{{record.date}}}" required>
       </div>
       <div class="valid-feedback">
         Looks good!
       </div>
       <div class="invalid-feedback">
-        Please choose a username.
+        Please choose a date.
       </div>
     </div>
 
     <div class="form-group row mb-5">
-      <label for="genre" class="col-sm-4 col-form-label col-form-label-lg py-0">類別*</label>
+      <label for="category" class="col-sm-4 col-form-label col-form-label-lg py-0">類別*</label>
       <div class="col-sm-4">
-        <select class="custom-select mr-sm-2" id="genre" name="genre" required>
+        <select class="custom-select mr-sm-2" id="category" name="category" required>
           <option selected>Select*</option>
-          <option value="">One</option>
-          <option value="">Two</option>
-          <option value="">Three</option>
+          <option value="home" {{#eq record.category "home"}}selected{{/eq}}>家居物業</option>
+          <option value="shuttle-van" {{#eq record.category "shuttle-van"}}selected{{/eq}}>交通出行</option>
+          <option value="grin-beam" {{#eq record.category "grin-beam"}}selected{{/eq}}>休閒娛樂</option>
+          <option value="utensils" {{#eq record.category "utensils"}}selected{{/eq}}>餐飲食品</option>
+          <option value="pen" {{#eq record.category "pen"}}selected{{/eq}}>其他</option>
         </select>
       </div>
       <div class="valid-feedback">
         Looks good!
       </div>
       <div class="invalid-feedback">
-        Please choose a username.
+        Please choose a category.
       </div>
     </div>
 
@@ -59,13 +62,13 @@
       <label for="amount" class="col-sm-4 col-form-label col-form-label-lg py-0">金額*</label>
       <div class="col-sm-4">
         <input type="number" name="amount" class="form-control form-control-lg" id="amount" placeholder="請輸入金額"
-          required>
+          value="{{{record.amount}}}" required>
       </div>
       <div class="valid-feedback">
         Looks good!
       </div>
       <div class="invalid-feedback">
-        Please choose a username.
+        Please enter an amount.
       </div>
     </div>
     <div class="col-md-8 d-flex justify-content-end">

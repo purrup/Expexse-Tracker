@@ -3,6 +3,10 @@ const app = express()
 const mongoose = require('mongoose')
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
+const handlebars = require('handlebars')
+const helpers = require('handlebars-helpers')({
+  handlebars: handlebars,
+})
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
