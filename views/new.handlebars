@@ -1,4 +1,4 @@
-<form action="#" class="needs-validation" novalidate>
+<form action="/" method="GET" class="needs-validation" novalidate>
   <div class="col-md-12 mx-auto flex-md-column align-items-md-center">
     <div class="row my-5">
       <div class="col-md-4 must-column-remind">
@@ -24,10 +24,11 @@
       </div>
     </div>
 
-    <div class="form-group row mb-5">
+    <div class="form-group row mb-5" id="calender">
       <label for="date" class="col-sm-4 col-form-label col-form-label-lg py-0">日期*</label>
       <div class="col-sm-4">
-        <input type="date" name="date" class="form-control form-control-lg" id="date" placeholder="" required>
+        <input type="date" name="date" class="form-control form-control-lg" id="date" placeholder="" data-id="date"
+          required>
       </div>
       <div class="valid-feedback">
         Looks good!
