@@ -38,15 +38,15 @@
   <div class="row mb-5">
 
     <ul class="list-group ">
-      {{!-- each --}}
+      {{#each records}}
       <li
-        class="list-group-item-active list-group-item-action list-group-item-light d-md-flex flex-row justify-content-between align-items-center">
-
+        class="list-group-item-active list-group-item-action list-group-item-light d-md-flex flex-row justify-content-between align-items-center mb-3">
+        <i class="fas fa-{{{this.category}}}"></i>
         <div class="expense-name col-md-auto mr-auto">
-          <p>午餐</p><span>2019/04/23</span>
+          <p>{{this.name}}</p><span>{{this.date}}</span>
         </div>
         <div class="amount col-auto mr-auto">
-          <span>60</span>
+          <span>{{this.amount}}</span>
         </div>
         <div class="col-auto">
           <a href="/records/edit" class="btn btn-success">修改</a>
@@ -56,7 +56,7 @@
         </div>
 
       </li>
-      {{!-- each --}}
+      {{/each}}
     </ul>
   </div>
   <div class="row create mt-3">

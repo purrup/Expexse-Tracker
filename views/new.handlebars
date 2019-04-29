@@ -1,4 +1,4 @@
-<form action="/" method="GET" class="needs-validation" novalidate>
+<form action="/records/new" method="POST" class="needs-validation" novalidate>
   <div class="col-md-12 mx-auto flex-md-column align-items-md-center">
     <div class="row my-5">
       <div class="col-md-4 must-column-remind">
@@ -13,8 +13,7 @@
     <div class="form-group row mb-5">
       <label for="expense-name" class="col-sm-4 col-form-label col-form-label-lg py-0">名稱*</label>
       <div class="col-sm-4">
-        <input type="text" name="expense-name" class="form-control form-control-lg" id="expense_name" placeholder=""
-          required>
+        <input type="text" name="name" class="form-control form-control-lg" id="expense_name" placeholder="" required>
       </div>
       <div class="valid-feedback">
         Looks good!
@@ -28,7 +27,7 @@
       <label for="date" class="col-sm-4 col-form-label col-form-label-lg py-0">日期*</label>
       <div class="col-sm-4">
         <input type="date" name="date" class="form-control form-control-lg" id="date" placeholder="" data-id="date"
-          required>
+          value="{{{today}}}" min="01-01" max="12-31" required>
       </div>
       <div class="valid-feedback">
         Looks good!
@@ -39,13 +38,17 @@
     </div>
 
     <div class="form-group row mb-5">
-      <label for="genre" class="col-sm-4 col-form-label col-form-label-lg py-0">類別*</label>
+      <label for="category" class="col-sm-4 col-form-label col-form-label-lg py-0">類別*</label>
       <div class="col-sm-4">
-        <select class="custom-select mr-sm-2" id="genre" name="genre" required>
+        <select class="custom-select mr-sm-2" id="category" name="category" required>
           <option selected>Select*</option>
-          <option value="">One</option>
-          <option value="">Two</option>
-          <option value="">Three</option>
+          <option value="utensils">餐飲食品</option>
+          <option value="grin-beam">休閒娛樂</option>
+          <option value="shuttle-van">交通出行</option>
+          <option value="home">家居物業</option>
+          <option value="pen">其他</option>
+
+
         </select>
       </div>
       <div class="valid-feedback">

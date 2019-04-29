@@ -4,42 +4,42 @@
       "id": 1,
       "name": "晚餐",
       "category": "餐飲食品",
-      "date": "",
+      "date": "2019-04-04",
       "amount": 100
     },
     {
       "id": 2,
       "name": "早餐",
       "category": "餐飲食品",
-      "date": "",
+      "date": "2019-04-03",
       "amount": 50
     },
     {
       "id": 3,
       "name": "電影",
       "category": "休閒娛樂",
-      "date": "",
+      "date": "2019-04-01",
       "amount": 300
     },
     {
       "id": 4,
       "name": "汽油",
       "category": "交通出行",
-      "date": "",
+      "date": "2019-04-02",
       "amount": 500
     },
     {
       "id": 6,
       "name": "水電",
       "category": "家居物業",
-      "date": "",
+      "date": "2019-04-18",
       "amount": 1000
     },
     {
       "id": 7,
       "name": "房租",
       "category": "家居物業",
-      "date": "",
+      "date": "2019-04-20",
       "amount": 20000
     }
   ]

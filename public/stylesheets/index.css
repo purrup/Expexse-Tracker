@@ -29,6 +29,10 @@ ul li .btn {
   font-size: 1em;
 }
 
+ul li i {
+  font-size: 2em;
+}
+
 .list-group {
   font-size: 1.2em;
 }
