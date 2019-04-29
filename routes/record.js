@@ -14,6 +14,9 @@ router.get('/new', (req, res) => {
 // 新增一筆 Record
 
 // 修改 Record 頁面
+router.get('/edit', (req, res) => {
+  res.render('edit')
+})
 
 // 修改 Record
 
