@@ -1,0 +1,97 @@
+<form action="#" class="needs-validation" novalidate>
+  <div class="col-md-12 mx-auto flex-md-column align-items-md-center">
+    <div class="row my-5">
+      <div class="col-md-4 must-column-remind">
+        <h5 class="font-weight-bold">*必填欄位</h5>
+      </div>
+      <div class="col-md-8">
+        <h2 class="font-weight-bold">請輸入你的支出</h2>
+      </div>
+    </div>
+
+
+    <div class="form-group row mb-5">
+      <label for="expense-name" class="col-sm-4 col-form-label col-form-label-lg py-0">名稱*</label>
+      <div class="col-sm-4">
+        <input type="text" name="expense-name" class="form-control form-control-lg" id="expense_name" placeholder=""
+          required>
+      </div>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+      <div class="invalid-feedback">
+        Please choose a username.
+      </div>
+    </div>
+
+    <div class="form-group row mb-5">
+      <label for="date" class="col-sm-4 col-form-label col-form-label-lg py-0">日期*</label>
+      <div class="col-sm-4">
+        <input type="date" name="date" class="form-control form-control-lg" id="date" placeholder="" required>
+      </div>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+      <div class="invalid-feedback">
+        Please choose a username.
+      </div>
+    </div>
+
+    <div class="form-group row mb-5">
+      <label for="genre" class="col-sm-4 col-form-label col-form-label-lg py-0">類別*</label>
+      <div class="col-sm-4">
+        <select class="custom-select mr-sm-2" id="genre" name="genre" required>
+          <option selected>Select*</option>
+          <option value="">One</option>
+          <option value="">Two</option>
+          <option value="">Three</option>
+        </select>
+      </div>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+      <div class="invalid-feedback">
+        Please choose a username.
+      </div>
+    </div>
+
+    <div class="form-group row mb-5">
+      <label for="amount" class="col-sm-4 col-form-label col-form-label-lg py-0">金額*</label>
+      <div class="col-sm-4">
+        <input type="number" name="amount" class="form-control form-control-lg" id="amount" placeholder="請輸入金額"
+          required>
+      </div>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+      <div class="invalid-feedback">
+        Please choose a username.
+      </div>
+    </div>
+    <div class="col-md-8 d-flex justify-content-end">
+      <button class="btn btn-primary" id="create-record" type="submit">新增支出</button>
+    </div>
+  </div>
+</form>
+
+
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+  (function () {
+    'use strict';
+    window.addEventListener('load', function () {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function (form) {
+        form.addEventListener('submit', function (event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+</script>
