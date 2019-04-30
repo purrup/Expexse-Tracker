@@ -9,7 +9,7 @@
 
       <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         {{#each month}}
-        <a class="dropdown-item" href="/filter/{{{this.value}}}">{{this.value}}</a>
+        <a class="dropdown-item" href="/filter/month/{{{this.value}}}">{{this.value}}</a>
         {{/each}}
 
       </div>
@@ -21,11 +21,11 @@
       </button>
 
       <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="">家居物業</a>
-        <a class="dropdown-item" href="#">交通出行</a>
-        <a class="dropdown-item" href="#">休閒娛樂</a>
-        <a class="dropdown-item" href="#">餐飲食品</a>
-        <a class="dropdown-item" href="#">其他</a>
+        <a class="dropdown-item" href="/filter/category/家居物業">家居物業</a>
+        <a class="dropdown-item" href="/filter/category/交通出行">交通出行</a>
+        <a class="dropdown-item" href="/filter/category/休閒娛樂">休閒娛樂</a>
+        <a class="dropdown-item" href="/filter/category/餐飲食品">餐飲食品</a>
+        <a class="dropdown-item" href="/filter/category/其他">其他</a>
       </div>
     </div>
     {{!-- <div class="form-group row mb-5 col-5 flex-md-row align-items-md-center">

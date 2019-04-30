@@ -53,6 +53,7 @@ app.use('/', require('./routes/home'))
 app.use('/records', require('./routes/record'))
 app.use('/users', require('./routes/user'))
 app.use('/auth', require('./routes/auths'))
+app.use('/filter', require('./routes/filter'))
 
 // listen to port
 app.listen(process.env.PORT || 3000, () => {
