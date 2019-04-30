@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Record = require('../models/record')
+const { authenticated } = require('../config/auth')
 
 // 列出全部 Record
 // router.get('/', (req, res) => {

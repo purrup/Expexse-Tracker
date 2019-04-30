@@ -24,11 +24,16 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex-row justify-content-between py-3 px-5">
       <a class="navbar-brand" href="/">Expense Tracker</a>
+      {{#if isAuthenticated}}
+      <a href="/users/logout" class="btn btn-outline-light btn-lg">Logout</a>
 
-      <form class="form-inline my-2 my-lg-0 d-flex flex-nowrap">
+      {{else}}
+      <a href="/users/login" class="btn btn-outline-light btn-lg">Login</a>
+      {{/if}}
+      {{!-- <form class="form-inline my-2 my-lg-0 d-flex flex-nowrap">
         <input class="form-control mr-sm-2" type="text" placeholder="Search">
         <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      </form> --}}
     </nav>
   </header>
 

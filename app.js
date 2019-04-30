@@ -32,6 +32,11 @@ app.use((req, res, next) => {
   // res.locals.warning_msg = req.flash('warning_msg')
   next()
 })
+app.use((req, res, next) => {
+  res.locals.user = req.user
+  res.locals.isAuthenticated = req.isAuthenticated()
+  next()
+})
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/todo', {
   useNewUrlParser: true,
