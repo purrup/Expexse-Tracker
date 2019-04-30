@@ -19,13 +19,27 @@ router.get('/month/:month', authenticated, (req, res) => {
         let recordAmount = parseInt(record.amount, 10)
         totalAmount += recordAmount
       })
-      console.log(recordsFilter)
       return res.render('index', { records: recordsFilter, totalAmount, month })
     })
 })
 
 router.get('/category/:category', authenticated, (req, res) => {
-  res.send('category page')
+  const categoryFilter = req.params.category
+  Record.find({ userId: req.user._id })
+    .sort()
+    .exec((err, records) => {
+      if (err) return console.error(err)
+      const recordsFilter = records.filter(record => {
+        const categoryRecord = record.category
+        return categoryFilter === categoryRecord
+      })
+      let totalAmount = 0
+      recordsFilter.forEach(record => {
+        let recordAmount = parseInt(record.amount, 10)
+        totalAmount += recordAmount
+      })
+      return res.render('index', { records: recordsFilter, totalAmount, month })
+    })
 })
 
 module.exports = router
