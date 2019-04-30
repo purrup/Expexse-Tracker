@@ -5,6 +5,7 @@ const { authenticated } = require('../config/auth')
 const month = require('../month.json').results
 
 router.get('/', authenticated, (req, res) => {
+  console.log(req.body)
   Record.find({ userId: req.user._id })
     .sort()
     .exec((err, records) => {
