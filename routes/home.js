@@ -4,10 +4,16 @@ const Record = require('../models/record')
 
 router.get('/', (req, res) => {
   Record.find({})
-    .sort({ name: 'asc' })
+    .sort()
     .exec((err, records) => {
       if (err) return console.error(err)
-      return res.render('index', { records })
+      console.log(records)
+      let totalAmount = 0
+      records.forEach(record => {
+        let recordAmount = parseInt(record.amount, 10)
+        totalAmount += recordAmount
+      })
+      return res.render('index', { records, totalAmount })
     })
 })
 
