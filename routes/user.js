@@ -11,26 +11,26 @@ router.get('/login', (req, res) => {
 
 // 登入檢查
 router.post('/login', (req, res, next) => {
-  passport.authenticate('local', function(err, user, info) {
-    req.flash('warning_msg', info.message)
-    if (err) {
-      return next(err)
-    }
-    if (!user) {
-      return res.redirect('/users/login')
-    }
-    req.logIn(user, function(err) {
-      if (err) {
-        return next(err)
-      }
-      return res.redirect('/')
-    })
-  })(req, res, next)
-  // passport.authenticate('local', {
-  //   successRedirect: '/',
-  //   failureRedirect: '/users/login',
-  //   failureFlash: 'Invalid username or password.',
+  // passport.authenticate('local', function(err, user, info) {
+  //   req.flash('warning_msg', info.message)
+  //   if (err) {
+  //     return next(err)
+  //   }
+  //   if (!user) {
+  //     return res.redirect('/users/login')
+  //   }
+  //   req.logIn(user, function(err) {
+  //     if (err) {
+  //       return next(err)
+  //     }
+  //     return res.redirect('/')
+  //   })
   // })(req, res, next)
+  passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/users/login',
+    failureFlash: 'Invalid username or password.',
+  })(req, res, next)
 })
 
 // 註冊頁面
@@ -44,7 +44,7 @@ router.post('/register', (req, res) => {
   let errors = []
   if (!name || !email || !password || !password2) {
     errors.push({ message: '所有欄位都是必填' })
-    res.render('register', {
+    return res.render('register', {
       errors,
       name,
       email,
@@ -54,7 +54,7 @@ router.post('/register', (req, res) => {
   }
   if (password !== password2) {
     errors.push({ message: '密碼輸入錯誤' })
-    res.render('register', {
+    return res.render('register', {
       errors,
       name,
       email,
@@ -63,7 +63,7 @@ router.post('/register', (req, res) => {
     })
   }
   if (errors.length > 0) {
-    res.render('register', {
+    return res.render('register', {
       errors,
       name,
       email,
@@ -75,7 +75,7 @@ router.post('/register', (req, res) => {
       if (user) {
         // 使用者已經註冊過
         errors.push({ message: '這個 Email 已經註冊過了' })
-        res.render('register', {
+        return res.render('register', {
           errors,
           name,
           email,

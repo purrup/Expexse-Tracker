@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Record = require('../models/record')
 const { authenticated } = require('../config/auth')
+const month = require('../month.json').results
 
 router.get('/', authenticated, (req, res) => {
   Record.find({ userId: req.user._id })
@@ -13,7 +14,7 @@ router.get('/', authenticated, (req, res) => {
         let recordAmount = parseInt(record.amount, 10)
         totalAmount += recordAmount
       })
-      return res.render('index', { records, totalAmount })
+      return res.render('index', { records, totalAmount, month })
     })
 })
 
