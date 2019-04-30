@@ -11,26 +11,26 @@ router.get('/login', (req, res) => {
 
 // 登入檢查
 router.post('/login', (req, res, next) => {
-  // passport.authenticate('local', function(err, user, info) {
-  //   req.flash('warning_msg', info.message)
-  //   if (err) {
-  //     return next(err)
-  //   }
-  //   if (!user) {
-  //     return res.redirect('/users/login')
-  //   }
-  //   req.logIn(user, function(err) {
-  //     if (err) {
-  //       return next(err)
-  //     }
-  //     return res.redirect('/')
-  //   })
-  // })(req, res, next)
-  passport.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: '/users/login',
-    failureFlash: 'Invalid username or password.',
+  passport.authenticate('local', function(err, user, info) {
+    req.flash('warning_msg', info.message)
+    if (err) {
+      return next(err)
+    }
+    if (!user) {
+      return res.redirect('/users/login')
+    }
+    req.logIn(user, function(err) {
+      if (err) {
+        return next(err)
+      }
+      return res.redirect('/')
+    })
   })(req, res, next)
+  // passport.authenticate('local', {
+  //   successRedirect: '/',
+  //   failureRedirect: '/users/login',
+  //   failureFlash: 'Invalid username or password.',
+  // })(req, res, next)
 })
 
 // 註冊頁面
