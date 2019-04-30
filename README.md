@@ -57,8 +57,8 @@ $ npm run start
 可用此帳戶登入，內建四筆支出資料
 
 - name: Iron Man
-- email : cheeseburger@gmail.com
-- password: iamironman
+- email : americafirst@gmail.com
+- password: icandothisallday
 
 ---
 
