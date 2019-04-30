@@ -8,9 +8,10 @@
       </button>
 
       <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="#">1月</a>
-        <a class="dropdown-item" href="#">2</a>
-        <a class="dropdown-item" href="#">3</a>
+        {{#each month}}
+        <a class="dropdown-item" href="#">{{this.value}}</a>
+        {{/each}}
+
       </div>
     </div>
     <div class="btn-group">
