@@ -1,17 +1,17 @@
-.must-column-remind h5 {
+.edit .must-column-remind h5 {
   padding-left: 10em;
 }
 
-.form-group label {
+.edit .form-group label {
   font-size: 2em;
   padding-left: 7em;
 }
 
-.form-group .col-sm-6 {
+.edit .form-group .col-sm-6 {
   padding: 0;
 }
 
-button#create-record {
+.edit button#create-record {
   width: 48.5%;
   font-size: 2em;
 }

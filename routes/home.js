@@ -7,7 +7,6 @@ router.get('/', (req, res) => {
     .sort()
     .exec((err, records) => {
       if (err) return console.error(err)
-      console.log(records)
       let totalAmount = 0
       records.forEach(record => {
         let recordAmount = parseInt(record.amount, 10)
