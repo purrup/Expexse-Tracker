@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
+const methodOverride = require('method-override')
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 const handlebars = require('handlebars')
@@ -8,6 +9,7 @@ const helpers = require('handlebars-helpers')({
   handlebars: handlebars,
 })
 
+app.use(methodOverride('_method'))
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 app.use(express.static('public'))

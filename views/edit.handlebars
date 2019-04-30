@@ -1,14 +1,14 @@
-<form action="#" class="needs-validation" novalidate>
-  <div class="col-md-12 mx-auto flex-md-column align-items-md-center">
-    <div class="row my-5">
-      <div class="col-md-4 must-column-remind">
-        <h5 class="font-weight-bold">*必填欄位</h5>
-      </div>
-      <div class="col-md-8">
-        <h2 class="font-weight-bold">請修改你的支出</h2>
-      </div>
+<div class="col-md-12 mx-auto flex-md-column align-items-md-center">
+  <div class="row my-5">
+    <div class="col-md-4 must-column-remind">
+      <h5 class="font-weight-bold">*必填欄位</h5>
     </div>
+    <div class="col-md-8">
+      <h2 class="font-weight-bold">請修改你的支出</h2>
+    </div>
+  </div>
 
+  <form action="/records/{{{record.id}}}?_method=PUT" method="POST" class="needs-validation" novalidate>
 
     <div class="form-group row mb-5">
       <label for="name" class="col-sm-4 col-form-label col-form-label-lg py-0">名稱*</label>
@@ -72,10 +72,11 @@
       </div>
     </div>
     <div class="col-md-8 d-flex justify-content-end">
-      <button class="btn btn-primary" id="create-record" type="submit">新增支出</button>
+      <button class="btn btn-primary" id="create-record" type="submit">修改完成</button>
     </div>
-  </div>
-</form>
+  </form>
+</div>
+
 
 
 <script>

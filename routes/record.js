@@ -3,9 +3,9 @@ const router = express.Router()
 const Record = require('../models/record')
 
 // 列出全部 Record
-router.get('/', (req, res) => {
-  res.send('display all record')
-})
+// router.get('/', (req, res) => {
+//   res.send('display all record')
+// })
 
 //新增一筆 Record 的頁面
 router.get('/new', (req, res) => {
@@ -27,6 +27,15 @@ router.get('/:id/edit', (req, res) => {
 })
 
 // 修改 Record
-router.post('/edit', (req, res) => {})
+router.put('/:id', (req, res) => {
+  Record.findOne({ _id: req.params.id }, (err, record) => {
+    console.log(req.url)
+    if (err) return console.error(err)
+    Object.assign(record, req.body)
+    record.save(err => {
+      err ? console.error(err) : res.redirect('/')
+    })
+  })
+})
 
 module.exports = router
