@@ -8,25 +8,25 @@ const Record = require('../models/record')
 // })
 
 //新增一筆 Record 的頁面
-router.get('/new', (req, res) => {
+router.get('/new', authenticated, (req, res) => {
   res.render('new')
 })
 
 // 新增一筆 Record
-router.post('/new', (req, res) => {
+router.post('/new', authenticated, (req, res) => {
   const newRecord = Record(req.body)
   newRecord.save(err => (err ? console.log(err) : res.redirect('/')))
 })
 
 // 修改 Record 頁面
-router.get('/:id/edit', (req, res) => {
+router.get('/:id/edit', authenticated, (req, res) => {
   Record.findOne({ _id: req.params.id }, (err, record) => {
     return res.render('edit', { record })
   })
 })
 
 // 修改 Record
-router.put('/:id', (req, res) => {
+router.put('/:id', authenticated, (req, res) => {
   Record.findOne({ _id: req.params.id }, (err, record) => {
     if (err) return console.error(err)
     Object.assign(record, req.body)
@@ -37,7 +37,7 @@ router.put('/:id', (req, res) => {
 })
 
 //刪除 Record
-router.delete('/:id/delete', (req, res) => {
+router.delete('/:id/delete', authenticated, (req, res) => {
   Record.findOne({ _id: req.params.id }, (err, record) => {
     if (err) return console.error(err)
     record.remove(err => {
