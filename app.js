@@ -10,7 +10,9 @@ const helpers = require('handlebars-helpers')({
 })
 const session = require('express-session')
 const passport = require('passport')
+const flash = require('connect-flash')
 
+app.use(flash())
 app.use(methodOverride('_method'))
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
@@ -30,8 +32,8 @@ require('./config/passport')(passport)
 app.use((req, res, next) => {
   res.locals.user = req.user
   res.locals.isAuthenticated = req.isAuthenticated()
-  // res.locals.success_msg = req.flash('success_msg')
-  // res.locals.warning_msg = req.flash('warning_msg')
+  res.locals.success_msg = req.flash('success_msg')
+  res.locals.warning_msg = req.flash('warning_msg')
   next()
 })
 
