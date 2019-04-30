@@ -12,7 +12,6 @@ router.get('/login', (req, res) => {
 // 登入檢查
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', function(err, user, info) {
-    req.flash('success_msg', info.message)
     req.flash('warning_msg', info.message)
     if (err) {
       return next(err)
