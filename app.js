@@ -9,24 +9,29 @@ const helpers = require('handlebars-helpers')({
   handlebars: handlebars,
 })
 const session = require('express-session')
-// const passport = require('passport')
+const passport = require('passport')
 
 app.use(methodOverride('_method'))
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
-// app.use(passport.initialize())
-// app.use(passport.session())
+app.use(
+  session({
+    secret: 'purrup',
+  })
+)
+app.use(passport.initialize())
+app.use(passport.session())
 
-// require('./config/passport')(passport)
-// app.use((req, res, next) => {
-//   res.locals.user = req.user
-//   res.locals.isAuthenticated = req.isAuthenticated()
-//   res.locals.success_msg = req.flash('success_msg')
-//   res.locals.warning_msg = req.flash('warning_msg')
-//   next()
-// })
+require('./config/passport')(passport)
+app.use((req, res, next) => {
+  res.locals.user = req.user
+  // res.locals.isAuthenticated = req.isAuthenticated()
+  // res.locals.success_msg = req.flash('success_msg')
+  // res.locals.warning_msg = req.flash('warning_msg')
+  next()
+})
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/todo', {
   useNewUrlParser: true,

@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const User = require('../models/user')
-// const passport = require('passport')
+const passport = require('passport')
 const bcrypt = require('bcryptjs')
 
 // 登入頁面
@@ -27,9 +27,8 @@ router.post('/login', (req, res, next) => {
   //   })
   // })(req, res, next)
   passport.authenticate('local', {
-    // 使用 passport 認證
-    successRedirect: '/', // 登入成功會回到根目錄
-    failureRedirect: '/users/login', // 失敗會留在原本頁面
+    successRedirect: '/',
+    failureRedirect: '/users/login',
     failureFlash: 'Invalid username or password.',
   })(req, res, next)
 })
@@ -112,7 +111,7 @@ router.post('/register', (req, res) => {
 // 登出
 router.get('/logout', (req, res) => {
   req.logout()
-  req.flash('success_msg', '你已經成功登出')
+  // req.flash('success_msg', '你已經成功登出')
   res.redirect('/users/login')
 })
 
