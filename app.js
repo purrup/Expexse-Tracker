@@ -19,6 +19,8 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(
   session({
     secret: 'purrup',
+    resave: 'false',
+    saveUninitialized: 'false',
   })
 )
 app.use(passport.initialize())
