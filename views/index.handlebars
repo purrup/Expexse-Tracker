@@ -1,5 +1,5 @@
 <div class="col-md-12 mx-auto flex-md-column align-items-md-center">
-  <div class="row my-5">
+  <div class="row my-5" id="filter">
 
     <div class="btn-group mr-3">
       <button class="btn btn-primary dropdown-toggle btn-lg" type="button" id="dropdownMenuButton"
@@ -25,15 +25,17 @@
         <a class="dropdown-item" href="/filter/category/shuttle-van">交通出行</a>
         <a class="dropdown-item" href="/filter/category/grin-beam">休閒娛樂</a>
         <a class="dropdown-item" href="/filter/category/utensils">餐飲食品</a>
-        <a class="dropdown-item" href="/filter/category/pen">其他</a>
+        <a class="dropdown-item" href="/filter/category/pen">其他</a>
       </div>
     </div>
+
+
     {{!-- <div class="form-group row mb-5 col-5 flex-md-row align-items-md-center">
       <label for="month" class="col-sm-4 col-form-label col-form-label-lg py-3">月份</label>
       <div class="col-sm-4">
         <select class="custom-select mr-sm-2" id="month" name="month">
           {{#each month}}
-          <option value="{{{this.value}}}" >{{this.value}}</option>
+          <option value="{{{this.value}}}">{{this.value}}</option>
           {{/each}}
         </select>
       </div>
@@ -43,14 +45,12 @@
       <label for="category" class="col-sm-4 col-form-label col-form-label-lg py-3">類別</label>
       <div class="col-sm-4">
         <select class="custom-select mr-sm-2" id="category" name="category">
-          <option selected>Select</option>
-          <option value="餐飲食品">餐飲食品</option>
-          <option value="休閒娛樂">休閒娛樂</option>
-          <option value="休閒娛樂">休閒娛樂</option>
-          <option value="家居物業">家居物業</option>
-          <option value="其他">其他</option>
-
-
+          <option selected>類別</option>
+          <option value="utensils">餐飲食品</option>
+          <option value="shuttle-van">交通出行</option>
+          <option value="grin-beam">休閒娛樂</option>
+          <option value="home">家居物業</option>
+          <option value="pen">其他</option>
         </select>
       </div>
     </div> --}}
@@ -78,10 +78,10 @@
         <span>{{this.amount}}</span>
       </div>
       <div class="col-auto">
-        <a href="/records/{{{this.id}}}/edit" class="btn btn-success btn-lg"">修改</a>
-          <form action="/records/{{{this.id}}}/delete?_method=DELETE" method="post" style="display:inline">
+        <a href="/records/{{{this.id}}}/edit" class="btn btn-success btn-lg">修改</a>
+        <form action="/records/{{{this.id}}}/delete?_method=DELETE" method="post" style="display:inline">
           <button type="submit" class="btn btn-danger btn-lg">刪除</button>
-          </form>
+        </form>
       </div>
 
     </li>
@@ -91,4 +91,5 @@
 <div class="row create mt-3">
   <a href="/records/new" class="btn btn-primary mb-3">新增支出</a>
 </div>
-</div>
+
+<script src="/javascripts/index.js"></script>
