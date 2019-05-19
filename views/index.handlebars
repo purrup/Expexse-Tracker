@@ -1,7 +1,7 @@
 <div class="col-md-12 mx-auto flex-md-column align-items-md-center">
   <div class="row my-5" id="filter">
 
-    <div class="btn-group mr-3">
+    {{!-- <div class="btn-group mr-3">
       <button class="btn btn-primary dropdown-toggle btn-lg" type="button" id="dropdownMenuButton"
         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         月份
@@ -27,33 +27,49 @@
         <a class="dropdown-item" href="/filter/category/utensils">餐飲食品</a>
         <a class="dropdown-item" href="/filter/category/pen">其他</a>
       </div>
-    </div>
-
-
-    {{!-- <div class="form-group row mb-5 col-5 flex-md-row align-items-md-center">
-      <label for="month" class="col-sm-4 col-form-label col-form-label-lg py-3">月份</label>
-      <div class="col-sm-4">
-        <select class="custom-select mr-sm-2" id="month" name="month">
-          {{#each month}}
-          <option value="{{{this.value}}}">{{this.value}}</option>
-          {{/each}}
-        </select>
-      </div>
-
-    </div>
-    <div class="form-group row mb-5 col-5 flex-md-row align-items-md-center">
-      <label for="category" class="col-sm-4 col-form-label col-form-label-lg py-3">類別</label>
-      <div class="col-sm-4">
-        <select class="custom-select mr-sm-2" id="category" name="category">
-          <option selected>類別</option>
-          <option value="utensils">餐飲食品</option>
-          <option value="shuttle-van">交通出行</option>
-          <option value="grin-beam">休閒娛樂</option>
-          <option value="home">家居物業</option>
-          <option value="pen">其他</option>
-        </select>
-      </div>
     </div> --}}
+
+    <form action="/" method="GET" class="row justify-content-between" id="form">
+      <div class="form-group row mb-5 col-5 flex-md-row align-items-md-center">
+        <div class="col-sm-4">
+          <select class="custom-select mr-sm-2" id="month" name="month" oninput="form.submit()" form="form">
+            {{#if month}}
+            <option value={{{month}}} selected>
+              {{{month}}}
+            </option>
+
+            {{else}}
+            <option value="" selected>月份</option>
+            {{/if}}
+
+            {{#if filterMonthList }}
+            {{#each filterMonthList}}
+            <option value="{{{this.value}}}">{{this.value}}</option>
+            {{/each}}
+
+            {{else}}
+            {{#each monthList}}
+            <option value="{{{this.value}}}">{{this.value}}</option>
+            {{/each}}
+
+            {{/if}}
+          </select>
+        </div>
+
+      </div>
+      <div class="form-group row mb-5 col-5 flex-md-row align-items-md-center">
+        <div class="col-sm-4">
+          <select class="custom-select mr-sm-2" id="category" name="category" oninput="form.submit()" form="form">
+            <option selected value="">類別</option>
+            <option value="utensils">餐飲食品</option>
+            <option value="shuttle-van">交通出行</option>
+            <option value="grin-beam">休閒娛樂</option>
+            <option value="home">家居物業</option>
+            <option value="pen">其他</option>
+          </select>
+        </div>
+      </div>
+    </form>
 
   </div>
 </div>

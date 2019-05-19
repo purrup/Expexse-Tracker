@@ -45,3 +45,12 @@ ul li i {
 .create a {
   font-size: 1.2em;
 }
+
+#filter .form-group select {
+  font-size: 1.5em;
+  min-width: 190px;
+  height: 60px;
+  outline: none;
+  border-radius: 8px;
+  border: 1px solid gray;
+}
